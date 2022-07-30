@@ -131,7 +131,7 @@
 // 	shirt: "White",
 // };
 
-// *dot notation
+// * dot notation
 // console.log(person.name); // .notation
 // console.log(person["name"]); // [""]notation
 
@@ -231,4 +231,88 @@ const double = () => {
 	}
 	return result;
 };
-console.log(double([1, 2, 3, 4, 5, 6, 7])); //*<----Make sure to put outside on LOOP so it doesnt run again
+//console.log(double([1, 2, 3, 4, 5, 6, 7])); //*<----Make sure to put outside on LOOP so it doesnt run again
+
+const letterCounter = (phrase) => {
+	phrase.length;
+
+	//* Counter
+	let result = 0;
+
+	for (const index in phrase) {
+		console.log(Number(index) + 1);
+		result = Number(index) + 1;
+	}
+
+	return { result };
+};
+
+//const phrase = "what color shirt are you wearing?";
+
+//console.log(letterCounter(phrase));
+
+// [1, 2, 3, 4]; // 10
+// result = 0;
+// result = 1;
+// result = 3;
+// result = 6;
+// result = 10;
+
+const sumArray = (numbers) => {
+	//<----- Arrow Function sumArray
+	let result = 0; //<----Give result the value of 0 instead of undefined
+	// for loop
+	for (const number of numbers) {
+		//*<-----Looping through an printing number
+
+		console.log(number);
+		result += number;
+	}
+
+	return { result };
+};
+
+const nums = [1, 2, 3, 4, 5]; //<---nums refer to the array-- Global Frame(variables can be grabbed from anywhere)
+//console.log(sumArray(nums)); //<------
+
+// * FIND MAX NUMBER
+const max = (numbers) => {
+	let result = numbers[0];
+
+	// * Loop
+	for (const number of numbers) {
+		if (number > result) {
+			result = number;
+		}
+	}
+
+	return { result };
+};
+
+console.log(max([1, 2, 3, 4, 5, 20, 45, 43, 2234, 34, 4653, 34]));
+
+const letterFrequency = (phrase) => {
+	// * frequency('haha')---> {'h':2, 'a':2}
+	console.log(phrase);
+	// ToDo make a 'freq' object {}
+	let frequency = {};
+	for (const letter of phrase) {
+		//* Check if letter exists in frequency
+		if (letter in frequency) {
+			frequency[letter] += 1;
+		} else {
+			frequency[letter] = 1;
+		}
+	}
+	//* increment the value by +1
+	//* otherwise, set the value to 1
+
+	return frequency;
+};
+
+console.log(
+	letterFrequency("Hey, how is your day going? It's sunny and hot here.")
+);
+
+// * INCREMENTAL OPERATORS
+// ? ++, --, +=
