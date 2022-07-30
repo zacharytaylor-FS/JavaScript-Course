@@ -67,7 +67,7 @@ Random - gives you number between 0 and 1
 // and it has 0 arguments
 // does: it logs out your name to the console
 function sayMyName() {
-  console.log('Qazi')
+	console.log("Qazi");
 }
 
 // sayMyName()
@@ -76,33 +76,33 @@ function sayMyName() {
 // it has 1 argument called `name`
 // does: it logs out your name to console
 function sayMyName2(name) {
-  console.log(name)
+	console.log(name);
 }
 
 // sayMyName2('Kevin')
 
 function greeting(name) {
-  // greet = 'hi ' + name + ', Nice to meet you!'
-  // template literals ``
-  greet = `hi ${name}, Nice to meet you!`
-  console.log(greet)
+	// greet = 'hi ' + name + ', Nice to meet you!'
+	// template literals ``
+	greet = `hi ${name}, Nice to meet you!`;
+	console.log(greet);
 }
 
 // greeting('Johnny Depp')
 
 function sum(a, b) {
-  // return
-  return a + b
+	// return
+	return a + b;
 }
 
 // num1 = sum(1, 2)
 // console.log(num1)
 
 function calculateFoodTotal(food, tip) {
-  const tipPercentage = tip / 100
-  const tipAmount = food * tipPercentage
-  const total = sum(food, tipAmount)
-  return total
+	const tipPercentage = tip / 100;
+	const tipAmount = food * tipPercentage;
+	const total = sum(food, tipAmount);
+	return total;
 }
 
 // console.log(calculateFoodTotal(300, 20))
@@ -111,12 +111,12 @@ function calculateFoodTotal(food, tip) {
 // Arrow Functions =>
 // arrow function with explicit return
 const sumArrow = (a, b) => {
-  return a + b
-}
+	return a + b;
+};
 
 // arrow function with implicit return
 // IMPORTANT: For implicit return, remove curly braces
-const sumArrow2 = (a, b) => a + b
+const sumArrow2 = (a, b) => a + b;
 
 // console.log(sumArrow2(10, 50))
 
@@ -145,9 +145,9 @@ const sumArrow2 = (a, b) => a + b
 
 // OBJECTS {}
 // key: value pairs
-// const person = { 
-//   name: 'Leonardo', 
-//   shirt: 'white' 
+// const person = {
+//   name: 'Leonardo',
+//   shirt: 'white'
 // }
 
 // access object: dot notation vs. bracket notation
@@ -178,26 +178,47 @@ const sumArrow2 = (a, b) => a + b
 // object
 // template literals
 // methods Math.floor()
-const introducer = (name, shirt) => {
-  const person = {
-    name: name,
-    shirt: shirt,
-    assets: 100000,
-    liabilities: 50000,
-    netWorth: function() {
-      return this.assets - this.liabilities
-    }
-  }
+// const introducer = (name, shirt) => {
+//   const person = {
+//     name: name,
+//     shirt: shirt,
+//     assets: 100000,
+//     liabilities: 50000,
+//     netWorth: function() {
+//       return this.assets - this.liabilities
+//     }
+//   }
 
-  const intro = `Hi, my name is ${person.name} and the color of my shirt is ${person.shirt} and my net worth is $${person.netWorth()} USD`
+//   const intro = `Hi, my name is ${person.name} and the color of my shirt is ${person.shirt} and my net worth is $${person.netWorth()} USD`
 
-  return intro
-}
+//   return intro
+// }
 
 // console.log(introducer('Qazi', 'black'))
 // console.log(introducer('Leonardo', 'white'))
 
-let fruits = ['🍌', '🍎', '🍊', '🍐', '🍌', '🍎', '🍊', '🍐', '🍌', '🍎', '🍊', '🍐', '🍌', '🍎', '🍊', '🍐', '🍌', '🍎', '🍊', '🍐']
+// let fruits = [
+// 	"🍌",
+// 	"🍎",
+// 	"🍊",
+// 	"🍐",
+// 	"🍌",
+// 	"🍎",
+// 	"🍊",
+// 	"🍐",
+// 	"🍌",
+// 	"🍎",
+// 	"🍊",
+// 	"🍐",
+// 	"🍌",
+// 	"🍎",
+// 	"🍊",
+// 	"🍐",
+// 	"🍌",
+// 	"🍎",
+// 	"🍊",
+// 	"🍐",
+// ];
 
 // console.log(fruits[0])
 // console.log(fruits[1])
@@ -212,35 +233,35 @@ let fruits = ['🍌', '🍎', '🍊', '🍐', '🍌', '🍎', '🍊', '🍐', '�
 //   console.log(fruit)
 // }
 
-const numbers = [1, 2, 3, 4, 5, 6]
-// for (let i=0; i < numbers.length; i++) {
-//   console.log(numbers[i])
-// }
+// const numbers = [1, 2, 3, 4, 5, 6];
+// // for (let i=0; i < numbers.length; i++) {
+// //   console.log(numbers[i])
+// // }
 
-const double = (numbers) => {
-  let result = []
-  for (const number of numbers) {
-    result.push(number * 2)
-  }
+// const double = (numbers) => {
+// 	let result = [];
+// 	for (const number of numbers) {
+// 		result.push(number * 2);
+// 	}
 
-  return result
-}
+// 	return result;
+// };
 
 // console.log(double([1, 2, 3, 4, 5, 6]))
 
 // [2, 4, 6, 8, 10, 12]
 
 const howManyLetters = (phrase) => {
-  // counter
-  let result = 0;
+	// counter
+	let result = 0;
 
-  for (const index in phrase) {
-    console.log(Number(index) + 1)
-    result = Number(index) + 1
-  }
+	for (const index in phrase) {
+		console.log(Number(index) + 1);
+		result = Number(index) + 1;
+	}
 
-  return { result }
-}
+	return { result };
+};
 
 // const phrase = prompt('write your phrase')
 
@@ -254,59 +275,59 @@ const howManyLetters = (phrase) => {
 // result = 10
 
 const sumArray = (numbers) => {
-  let result = 0;
-  // for loop
-  for (const number of numbers) {
-    console.log(number)
-    result += number
-  }
-  return { result }
-}
+	let result = 0;
+	// for loop
+	for (const number of numbers) {
+		console.log(number);
+		result += number;
+	}
+	return { result };
+};
 
 // const nums = [1, 2, 3, 4, 5]
 // console.log(sumArray(nums))
 // sum up all numbers in array
 
 const max = (numbers) => {
-  let result = numbers[0]
+	let result = numbers[0];
 
-  // loop
-  for (const number of numbers) {
-    if (number > result) {
-      result = number
-    }
-  }
+	// loop
+	for (const number of numbers) {
+		if (number > result) {
+			result = number;
+		}
+	}
 
-  return { result }
-}
+	return { result };
+};
 
 //  console.log(max([1, 2, 3, 4, 5]))
 
 const letterFrequency = (phrase) => {
-  // letterFrequency('haha') 👉 {'h': 2, 'a': 2}
-  console.log(phrase)
-  // make a `frequency` object {}
-  let frequency = {}
-  for (const letter of phrase) {
-    // check if letter exists in frequency
-    if (letter in frequency) {
-      // increment the value by +1
-      frequency[letter] += 1
-      // otherwise, set the value to 1
-    } else {
-      frequency[letter] = 1
-    }
-  }
-  return frequency
-}
+	// letterFrequency('haha') 👉 {'h': 2, 'a': 2}
+	console.log(phrase);
+	// make a `frequency` object {}
+	let frequency = {};
+	for (const letter of phrase) {
+		// check if letter exists in frequency
+		if (letter in frequency) {
+			// increment the value by +1
+			frequency[letter] += 1;
+			// otherwise, set the value to 1
+		} else {
+			frequency[letter] = 1;
+		}
+	}
+	return frequency;
+};
 
 // console.log(letterFrequency('lol, what are you doing later tonight lol, haha!'))
 
 // wordFrequency('lol what lol') 👉 {'lol': 2, 'what': 1}
 const wordFrequency = (phrase) => {
-  const words = phrase.split(' ')
-  return letterFrequency(words)
-}
+	const words = phrase.split(" ");
+	return letterFrequency(words);
+};
 
 // const userInput = prompt('Write your sentence')
 // console.log(wordFrequency(userInput))
@@ -320,33 +341,33 @@ const wordFrequency = (phrase) => {
 
 // MAP
 const doubleMap = (numbers) => {
-  return numbers.map(number => number * 2)
-}
+	return numbers.map((number) => number * 2);
+};
 
 // console.log(doubleMap([1, 2, 3]))
 
 // filter([1,2,3,4,5,6], 3) 👉 [4, 5, 6]
 const filter = (numbers, greaterThan) => {
-  let result = []
-  for (const number of numbers) {
-    if (number > greaterThan) {
-      result.push(number)
-    }
-  }
-  return result
-}
+	let result = [];
+	for (const number of numbers) {
+		if (number > greaterThan) {
+			result.push(number);
+		}
+	}
+	return result;
+};
 
 // console.log(filter([1, 2, 3, 4, 5, 6], 2))
 // const nums = [1, 2, 3, 4, 5, 6]
 // console.log(nums.filter(num => num > 4 || num < 2))
 
 const actors = [
-  { name: 'johnny', netWorth: 2000000 },
-  { name: 'amber', netWorth: 10 },
-  { name: 'matt', netWorth: 170000000 },
-  { name: 'brad', netWorth: 300000000 },
-  { name: 'leonardo', netWorth: 10000000 },
-]
+	{ name: "johnny", netWorth: 2000000 },
+	{ name: "amber", netWorth: 10 },
+	{ name: "matt", netWorth: 170000000 },
+	{ name: "brad", netWorth: 300000000 },
+	{ name: "leonardo", netWorth: 10000000 },
+];
 
 // let result = actors.filter(actor => actor.netWorth > 10)
 // console.log(result)
@@ -364,12 +385,12 @@ const actors = [
 // randomFruit([1, 2]) 👉 2
 // randomFruit([1, 2]) 👉 1
 const randomFruit = (fruits) => {
-  const randomNumber = Math.floor(Math.random() * fruits.length)
+	const randomNumber = Math.floor(Math.random() * fruits.length);
 
-  console.log(randomNumber)
+	console.log(randomNumber);
 
-  return fruits[randomNumber]
-}
+	return fruits[randomNumber];
+};
 
 // fruits = ['🍌', '🍎', '🍊', '🍐']
 // console.log(randomFruit(fruits))
@@ -377,20 +398,20 @@ const randomFruit = (fruits) => {
 // if else if else
 // rainy (1), sunny (-1), overcast (0)
 const weatherScorer = (weather, weather2) => {
-  let score
+	let score;
 
-  if (weather == 'rainy' && weather2 == 'overcast') {
-    score = 2
-  } else if (weather == 'rainy') {
-    score = 1
-  } else if (weather == 'sunny') {
-    score = -1
-  } else {
-    score = 0
-  }
+	if (weather == "rainy" && weather2 == "overcast") {
+		score = 2;
+	} else if (weather == "rainy") {
+		score = 1;
+	} else if (weather == "sunny") {
+		score = -1;
+	} else {
+		score = 0;
+	}
 
-  return score
-}
+	return score;
+};
 
 // console.log(weatherScorer('rainy', 'sunny'))
 
