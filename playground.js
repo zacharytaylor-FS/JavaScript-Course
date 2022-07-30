@@ -304,7 +304,7 @@ const sumArrow2 = (a, b) => a + b;
 //  console.log(max([1, 2, 3, 4, 5]))
 
 // const letterFrequency = (phrase) => {
-// 	// letterFrequency('haha') 👉 {'h': 2, 'a': 2}
+// letterFrequency('haha') 👉 {'h': 2, 'a': 2}
 // 	console.log(phrase);
 // 	// make a `frequency` object {}
 // 	let frequency = {};
