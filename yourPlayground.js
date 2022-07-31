@@ -310,9 +310,29 @@ const letterFrequency = (phrase) => {
 	return frequency;
 };
 
-console.log(
-	letterFrequency("Hey, how is your day going? It's sunny and hot here.")
-);
+// console.log(
+// 	letterFrequency("Hey, how is your day going? It's sunny and hot here.")
+// );
 
 // * INCREMENTAL OPERATORS
 // ? ++, --, +=
+
+// * wordFrequency ('lol what lol') 👉🏾 {'lol':2, 'what':1}
+const wordFrequency = (phrase) => {
+	// let frequency = {}; //* OBJECT
+	const words = phrase.split(" "); // * Turn it into and ARRAY -- (" ") seperated by spaces
+	/**  //!CAN BE REPLACED 
+	 *   //* with letterFrequency()
+	 for (const word of words) {
+		console.log(word);
+		if (word in frequency) {
+			frequency[word] += 1;
+		} else {
+			frequency[word] = 1;
+		}
+	}
+	*/
+	return letterFrequency(words);
+};
+const userInput = prompt("Write your message");
+console.log(wordFrequency(userInput));
