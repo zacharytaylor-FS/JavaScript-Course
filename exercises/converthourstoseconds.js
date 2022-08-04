@@ -10,13 +10,16 @@
  *
  * * 1 hour = 60 min
  * * 1 minute = 60 seconds
+ * * 2 minute = 120 seconds
+ * * 3 minute = 180 seconds
  *
  * *  minute * 60 = seconds
+ * *  hours * 60 = minutes
  */
 
 function howManySeconds(hours) {
-	let seconds = minutes * 60;
 	let minutes = hours * 60;
+	let seconds = minutes * 60;
 
 	// Your function should return an integer
 	// of how many seconds are in the hour
