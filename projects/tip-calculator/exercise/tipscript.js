@@ -19,9 +19,6 @@
 
 // ToDo---> Get global access to all inputs / divs here (you'll need them later 😘)
 // ToDo---> bill input, tip input, number of people div, and per person total div
-
-// ToDo---> Get global access to all inputs / divs here (you'll need them later 😘)
-// ToDo---> bill input, tip input, number of people div, and per person total div
 const billInput = document.getElementById("billTotalInput");
 const tipInput = document.getElementById("tipInput");
 const numberOfPeopleDiv = document.getElementById("numberOfPeople");
@@ -32,14 +29,19 @@ let numberOfPeople = Number(numberOfPeopleDiv.innerText);
 
 // ** Calculate the total bill per person **
 const calculateBill = () => {
+	//* Getting value from bill Input
 	const bill = Number(billInput.value);
 
+	//* Get Tip from user & convert to decimal
 	const tipPercentage = Number(tipInput.value) / 100;
 
+	//* Get the Tip Amount
 	const tipAmount = bill * tipPercentage;
 
+	//* Get the Total
 	const total = tipAmount + bill;
 
+	//* Calculate per person total
 	const perPersonTotal = total / numberOfPeople;
 
 	perPersonTotalDiv.innerText = `$${perPersonTotal.toFixed(2)}`;
