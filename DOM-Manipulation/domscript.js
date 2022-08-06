@@ -11,5 +11,3 @@ title.innerText = message;
 console.log("after: ", title.innerText);
 
 title.innerHTML = `<p>${message}</p>`;
-
-titleDiv.style.backgroundColor = "red";
