@@ -186,20 +186,20 @@ console.log(introducer("zac", "white"));
 
 //*FOR LOOPS
 //?Print All Data
-const fruits = [
-	"bananna",
-	"apple",
-	"blueberry",
-	"pear",
-	"bananna",
-	"apple",
-	"blueberry",
-	"pear",
-	"bananna",
-	"apple",
-	"blueberry",
-	"pear",
-];
+// const fruits = [
+// 	"bananna",
+// 	"apple",
+// 	"blueberry",
+// 	"pear",
+// 	"bananna",
+// 	"apple",
+// 	"blueberry",
+// 	"pear",
+// 	"bananna",
+// 	"apple",
+// 	"blueberry",
+// 	"pear",
+// ];
 
 // ? (let i=0;) <------INDEX
 // ? (i < fruits.length;) <------CONDITION for the loop to run 0 for ALL fruits
@@ -411,3 +411,48 @@ const result = nums.reduce(sum);
 // ? const result2 = nums.reduce((a, b) => a + b);
 
 console.log(result);
+
+//* Select Random Element from an ARRAY
+//* randomFruit([1,2]) 👉🏾 2
+//* randomFruit([1,2]) 👉🏾 1
+
+const randomFruit = (fruits) => {
+	const randomNumber = Math.floor(Math.random() * fruits.length);
+	return fruits[randomNumber];
+};
+
+fruits = [
+	"bananna",
+	"apple",
+	"blueberry",
+	"pear",
+	"bananna",
+	"apple",
+	"blueberry",
+	"pear",
+	"bananna",
+	"apple",
+	"blueberry",
+	"pear",
+];
+console.log(fruits[0]);
+
+console.log(randomFruit(fruits));
+
+// * if else if else
+// * rainy(1), sunny (-1), overcast (0)
+const weatherScorer = (weather, weather2) => {
+	let score;
+	if (weather == "rainy" && weather2 == "overcast") {
+		score = 2;
+	} else if (weather == "rainy") {
+		score = 1;
+	} else if (weather == "sunny") {
+		score = -1;
+	} else {
+		score = 0;
+	}
+	return score;
+};
+
+console.log(weatherScorer("rainy", "overcast"));

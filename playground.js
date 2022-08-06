@@ -384,34 +384,34 @@ const sumArrow2 = (a, b) => a + b;
 // select a random element from an array
 // randomFruit([1, 2]) 👉 2
 // randomFruit([1, 2]) 👉 1
-const randomFruit = (fruits) => {
-	const randomNumber = Math.floor(Math.random() * fruits.length);
+//// const randomFruit = (fruits) => {
+//// 	const randomNumber = Math.floor(Math.random() * fruits.length);
 
-	console.log(randomNumber);
+//// 	console.log(randomNumber);
 
-	return fruits[randomNumber];
-};
+// //	return fruits[randomNumber];
+// };
 
 // fruits = ['🍌', '🍎', '🍊', '🍐']
 // console.log(randomFruit(fruits))
 
 // if else if else
 // rainy (1), sunny (-1), overcast (0)
-const weatherScorer = (weather, weather2) => {
-	let score;
+// const weatherScorer = (weather, weather2) => {
+// 	let score;
 
-	if (weather == "rainy" && weather2 == "overcast") {
-		score = 2;
-	} else if (weather == "rainy") {
-		score = 1;
-	} else if (weather == "sunny") {
-		score = -1;
-	} else {
-		score = 0;
-	}
+// 	if (weather == "rainy" && weather2 == "overcast") {
+// 		score = 2;
+// 	} else if (weather == "rainy") {
+// 		score = 1;
+// 	} else if (weather == "sunny") {
+// 		score = -1;
+// 	} else {
+// 		score = 0;
+// 	}
 
-	return score;
-};
+// 	return score;
+// };
 
 // console.log(weatherScorer('rainy', 'sunny'))
 

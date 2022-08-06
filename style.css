@@ -8,3 +8,11 @@ body {
 	background-color: #0d1b2a;
 	color: #e0e1dd;
 }
+
+a {
+	color: orange;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
