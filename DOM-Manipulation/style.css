@@ -1,9 +1,3 @@
 body {
 	background-color: lightblue;
 }
-
-.square__block {
-	width: 100px;
-	height: 100px;
-	color: red;
-}
