@@ -24,7 +24,7 @@
 // ToDo---> bill input, tip input, number of people div, and per person total div
 const billInput = document.getElementById("billTotalInput");
 const tipInput = document.getElementById("tipInput");
-const numberofPeopleDiv = documnet.getElementById("numberOfPeople");
+const numberOfPeopleDiv = document.getElementById("numberOfPeople");
 const perPersonTotalDiv = document.getElementById("perPersonTotal");
 
 // * Get number of people from number of people div
@@ -32,32 +32,24 @@ let numberOfPeople = Number(numberOfPeopleDiv.innerText);
 
 // ** Calculate the total bill per person **
 const calculateBill = () => {
-	// ToDo---> get bill from user input & convert it into a number
 	const bill = Number(billInput.value);
-	// ToDo---> get the tip from user & convert it into a percentage (divide by 100)
+
 	const tipPercentage = Number(tipInput.value) / 100;
 
-	// ToDo---> get the total tip amount
 	const tipAmount = bill * tipPercentage;
 
-	// ToDo---> calculate the total (tip amount + bill)
 	const total = tipAmount + bill;
 
-	// ToDo---> calculate the per person total (total divided by number of people)
 	const perPersonTotal = total / numberOfPeople;
 
-	// ToDo---> update the perPersonTotal on DOM & show it to user
 	perPersonTotalDiv.innerText = `$${perPersonTotal.toFixed(2)}`;
 };
 
 const increasePeople = () => {
-	// increment the amount
 	numberOfPeople += 1;
 
-	// update the DOM with the new number of people
 	numberOfPeopleDiv.innerText = numberOfPeople;
 
-	// calculate the bill based on the new number of people
 	calculateBill();
 };
 
@@ -70,12 +62,9 @@ const decreasePeople = () => {
 		return;
 	}
 
-	//ToDo---> decrement the amount of people
 	numberOfPeople -= 1;
 
-	//ToDo---> update the DOM with the new number of people
-
 	numberOfPeopleDiv.innerText = numberOfPeople;
-	//ToDo---> calculate the bill based on the new number of people
+
 	calculateBill();
 };
