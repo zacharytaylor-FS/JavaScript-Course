@@ -224,12 +224,13 @@ const numbers = [1, 2, 3, 4, 5, 6];
 
 //*Function for doubling numbers in an ARRAY
 const double = () => {
-	let result = [];
+	let result = []; // * <---Temporary Array
 	for (const number of numbers) {
-		// console.log(number * 2); //*times the number in the ARRAY by 2
+		// * A loop
+		// console.log(number * 2); //*times the variables in the ARRAY by 2
 		result.push(number * 2); //*Get a NEW ARRAY an print to console with result
 	}
-	return result;
+	return result; // * <-----Returning the Array
 };
 //console.log(double([1, 2, 3, 4, 5, 6, 7])); //*<----Make sure to put outside on LOOP so it doesnt run again
 
@@ -272,8 +273,8 @@ const sumArray = (numbers) => {
 	return { result };
 };
 
-const nums = [1, 2, 3, 4, 5]; //<---nums refer to the array-- Global Frame(variables can be grabbed from anywhere)
-//console.log(sumArray(nums)); //<------
+////const nums = [1, 2, 3, 4, 5]; //<---nums refer to the array-- Global Frame(variables can be grabbed from anywhere)
+////console.log(sumArray(nums)); //<------
 
 // * FIND MAX NUMBER
 const max = (numbers) => {
@@ -310,9 +311,9 @@ const letterFrequency = (phrase) => {
 	return frequency;
 };
 
-// console.log(
-// 	letterFrequency("Hey, how is your day going? It's sunny and hot here.")
-// );
+console.log(
+	letterFrequency("Hey, how is your day going? It's sunny and hot here.")
+);
 
 // * INCREMENTAL OPERATORS
 // ? ++, --, +=
@@ -334,5 +335,79 @@ const wordFrequency = (phrase) => {
 	*/
 	return letterFrequency(words);
 };
-const userInput = prompt("Write your message");
-console.log(wordFrequency(userInput));
+
+// const userInput = prompt("Write your message");
+// console.log(wordFrequency(userInput));
+
+// * Higher Order Function
+// !?!? ARRAY METHODS
+// * Map - Loops and Returns an Array
+// * Filter - Loops and Returns and Array with matching conditions
+// * Reduce
+
+// * Map() ---Loop Through the Array an log to the console
+// [1, 2, 3, 4].map((number) => console.log(number)); //* <-----Implicit Return (automatically invoked)
+
+const doubleMap = (numbers) => {
+	return numbers.map((number) => number * 2);
+};
+
+// let result = [1, 2, 3, 4].map((number) => number * 2); //* <----Shorter way to double the vairables in the ARRAY
+// console.log(result);
+
+//* Filter([1,2,3,4,5,6], 3) 👉🏾 [4,5,6]
+// const filter = (numbers, greaterThan) => {
+// 	let result = [];
+// 	for (const number of numbers) {
+// 		if (number > greaterThan) {
+// 			result.push(number);
+// 		}
+// 	}
+// 	return result;
+// };
+
+const numb5 = [1, 2, 3, 4, 5, 6];
+
+const actors = [
+	{ name: "Johnny", netWorth: 150000000 },
+	{ name: "Amber", netWorth: -6000000 },
+	{ name: "Matt", netWorth: 170000000 },
+	{ name: "Brad", netWorth: 300000000 },
+	{ name: "Leonardo", netWorth: 260000000 },
+];
+console.log(numb5.filter((num) => num > 4 || num < 2));
+// let result = actors.filter((actor) => actor.netWorth > 10);
+// let names = result.map((actor) => actor.name).join(", ");
+
+// console.log(actors.reduce((a, b) => a + b.netWorth, 0)); //* SUM UP the actors NETWORTH
+
+// ! Example of conditionals for a user
+
+/** //*  if (userIsAuthenticated && userIsPayingMember){
+ * *  
+ * } else {
+ * 
+ * * }
+
+*/
+
+//document.getElementById("playgroundD").innerHTML = `<h1>${names}</h1>`;
+
+//* Reduce
+// * sum all of the net worths
+// * SUM: think REDUCE!!
+
+function sum(a, b) {
+	// * CAN USE WITHIN REDUCE
+	return a + b;
+}
+
+const nums = [1, 2, 3];
+const result = nums.reduce(sum);
+
+// !OR
+
+// ? const nums2 = [1, 2, 3];
+// ? const result2 = nums.reduce((a, b) => a + b);
+
+console.log(result);

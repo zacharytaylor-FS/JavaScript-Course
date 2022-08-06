@@ -284,8 +284,8 @@ const sumArrow2 = (a, b) => a + b;
 // 	return { result };
 // };
 
-// const nums = [1, 2, 3, 4, 5]
-// console.log(sumArray(nums))
+//// const nums = [1, 2, 3, 4, 5]
+//// console.log(sumArray(nums))
 // sum up all numbers in array
 
 // const max = (numbers) => {
@@ -340,34 +340,34 @@ const sumArrow2 = (a, b) => a + b;
 // reduce
 
 // MAP
-const doubleMap = (numbers) => {
-	return numbers.map((number) => number * 2);
-};
+// const doubleMap = (numbers) => {
+// 	return numbers.map((number) => number * 2);
+// };
 
 // console.log(doubleMap([1, 2, 3]))
 
 // filter([1,2,3,4,5,6], 3) 👉 [4, 5, 6]
-const filter = (numbers, greaterThan) => {
-	let result = [];
-	for (const number of numbers) {
-		if (number > greaterThan) {
-			result.push(number);
-		}
-	}
-	return result;
-};
+// const filter = (numbers, greaterThan) => {
+// 	let result = [];
+// 	for (const number of numbers) {
+// 		if (number > greaterThan) {
+// 			result.push(number);
+// 		}
+// 	}
+// 	return result;
+// };
 
 // console.log(filter([1, 2, 3, 4, 5, 6], 2))
-// const nums = [1, 2, 3, 4, 5, 6]
-// console.log(nums.filter(num => num > 4 || num < 2))
+//// const nums = [1, 2, 3, 4, 5, 6]
+//// console.log(nums.filter(num => num > 4 || num < 2))
 
-const actors = [
-	{ name: "johnny", netWorth: 2000000 },
-	{ name: "amber", netWorth: 10 },
-	{ name: "matt", netWorth: 170000000 },
-	{ name: "brad", netWorth: 300000000 },
-	{ name: "leonardo", netWorth: 10000000 },
-];
+// const actors = [
+// 	{ name: "johnny", netWorth: 2000000 },
+// 	{ name: "amber", netWorth: 10 },
+// 	{ name: "matt", netWorth: 170000000 },
+// 	{ name: "brad", netWorth: 300000000 },
+// 	{ name: "leonardo", netWorth: 10000000 },
+// ];
 
 // let result = actors.filter(actor => actor.netWorth > 10)
 // console.log(result)
@@ -376,8 +376,8 @@ const actors = [
 
 // playground.innerHTML = `<h1>${names}</h1>`
 
-// const nums = [1, 2, 3, 4]
-// const result = nums.reduce((a, b) => a + b, 0)
+//// const nums = [1, 2, 3, 4]
+//// const result = nums.reduce((a, b) => a + b, 0)
 
 // console.log(result)
 
