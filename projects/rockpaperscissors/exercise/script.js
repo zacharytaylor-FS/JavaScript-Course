@@ -10,6 +10,8 @@
     👉 Higher order Function (Math.random())
 */
 
+const totalScore = { computerScore: 0, playerScore: 0 };
+
 // ** getComputerChoice randomly selects between `rock` `paper` `scissors` and returns that string **
 // getComputerChoice() 👉 'Rock'
 // getComputerChoice() 👉 'Scissors'
@@ -66,7 +68,7 @@ function showResult(score, playerChoice, computerChoice) {
 			result.innerText = `You Lose!`;
 			break; //!<---STOP execution of switch block
 		case 0:
-			result.innerHTML = "Its a DRAW";
+			result.innerHTML = "Its a TIE";
 			break;
 		case 1:
 			result.innerHTML = "You Win";
@@ -86,6 +88,7 @@ function showResult(score, playerChoice, computerChoice) {
 function onClickRPS(playerChoice) {
 	const computerChoice = getComputerChoice();
 	const score = getResult(playerChoice.value, computerChoice);
+	totalScore["playerScore"] += score;
 	showResult(score, playerChoice.value, computerChoice);
 }
 
