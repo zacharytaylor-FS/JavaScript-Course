@@ -1,0 +1,49 @@
+html,
+body {
+	font-family: "Inter", sans-serif;
+	font-family: "Lato", sans-serif;
+}
+
+body {
+	background-color: #0d1b2a;
+	color: #e0e1dd;
+}
+
+a {
+	color: orange;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+button {
+	margin: 1em auto;
+	border-radius: 12px;
+	border: none;
+	padding: 0.3em 0.5em;
+	font-size: 1rem;
+	text-transform: uppercase;
+	background: hsla(17, 95%, 50%, 1);
+
+	background: linear-gradient(
+		90deg,
+		hsla(17, 95%, 50%, 1) 0%,
+		hsla(42, 94%, 57%, 1) 100%
+	);
+
+	background: -moz-linear-gradient(
+		90deg,
+		hsla(17, 95%, 50%, 1) 0%,
+		hsla(42, 94%, 57%, 1) 100%
+	);
+
+	background: -webkit-linear-gradient(
+		90deg,
+		hsla(17, 95%, 50%, 1) 0%,
+		hsla(42, 94%, 57%, 1) 100%
+	);
+}
+
+img {
+}
