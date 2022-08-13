@@ -5,18 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h2>🌟 Super Hero App</h2>
-  <p>You can search for a super hero like "batman" or "thanos" or... You can generate a random hero</p>
-  <input id='searchInput' type="text">
+  <h2>Find Your Hero App</h2>
+  <p>Search for your favorite SuperHero along with stats or You can generate a random hero</p>
+  <p>731 Super Hero Characters</p>
+  <input id='searchInput' type="text" value="Search Input">
   <button id='searchButton'>Search</button>
   <button id='newHeroButton'>Random Hero</button>
   </br>
   <div id='heroImage'><img src="" alt=""></div>
-  <script src="script.js"></script>
+  <script src='/api/superHero/script.js'></script>
 </body>
 
 </html>
