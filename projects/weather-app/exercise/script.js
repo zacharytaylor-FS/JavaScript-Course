@@ -2,15 +2,17 @@ const options = {
 	method: "GET",
 	headers: {
 		"X-RapidAPI-Key": "3d578e8917msh515049c07152fc7p123361jsne7827357076e",
-		"X-RapidAPI-Host": "open-weather13.p.rapidapi.com",
+		"X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
 	},
 };
 
-fetch("https://open-weather13.p.rapidapi.com/city/radford", options)
+fetch(
+	"https://weatherapi-com.p.rapidapi.com/forecast.json?q=Radford&days=3",
+	options
+)
 	.then((response) => response.json())
-	.then((data) => console.log(data.weather[0].main))
+	.then((data) => console.log(data.location["name"]))
 	.catch((err) => console.error(err));
-
 /**
  * Weather App
  * TODO: Complete getWeatherData() to return json response Promise
