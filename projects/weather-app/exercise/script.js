@@ -20,8 +20,15 @@ fetch(
  * TODO: Complete showWeatherData() to set the data in the the html file from response
  */
 
+//* DIVS I NEED
+//* city-name
+//* weather-type
+//* temp
+//* min-temp
+//* max-temp
+
 // API_KEY for maps api
-let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
+let API_KEY = "3d578e8917msh515049c07152fc7p123361jsne7827357076e";
 
 /**
  * Retrieve weather data from openweathermap
@@ -30,7 +37,8 @@ let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
  * https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial
  */
 getWeatherData = (city) => {
-	const URL = "https://api.openweathermap.org/data/2.5/weather";
+	const URL =
+		"https://weatherapi-com.p.rapidapi.com/forecast.json?q=Radford&days=3";
 	//HINT: Use template literals to create a url with input and an API key
 
 	//CODE GOES HERE
