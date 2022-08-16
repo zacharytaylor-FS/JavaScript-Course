@@ -1,8 +1,11 @@
-#city-input,
-#weather-output {
-	max-width: 600px;
-	margin: 0 auto;
+body {
+	background-color: var(--bs-dark);
 }
+
+/* #weather-output {
+	max-width: 800px;
+	margin: 0 auto;
+} */
 
 .banner {
 	color: #ffd23f;
