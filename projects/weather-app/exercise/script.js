@@ -60,45 +60,45 @@ let /**
 	 * https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial
 	 */
 
-	// getGeoLocation = () => {
-	// 	const status = document.getElementById("status");
-	// 	const mapLink = document.getElementById("mapLink");
+	getGeoLocation = () => {
+		const status = document.getElementById("status");
+		const geolocation = document.getElementById("mapLink");
 
-	// 	mapLink.href = "";
-	// 	mapLink.textContent = "";
-	// 	console.log("button is working");
-	// 	function success(position) {
-	// 		const latitude = position.coords.latitude;
-	// 		const longitude = position.coords.longitude;
+		mapLink.href = [];
+		mapLink.textContent = "";
+		console.log("button is working");
+		function success(position) {
+			const latitude = position.coords.latitude;
+			const longitude = position.coords.longitude;
 
-	// 		status.textContent = "";
-	// 		mapLink.href = `https:www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-	// 		mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-	// 	}
+			status.textContent = "";
+			geolocation.href = `https:www.openstreetmap.org/#map=18/${latitude},${longitude}`;
+			console.log((geolocation.textContent = `${latitude},${longitude}`));
+		}
 
-	// 	function error() {
-	// 		status.textContent = "Unable to retrieve your location";
-	// 	}
+		function error() {
+			status.textContent = "Unable to retrieve your location";
+		}
 
-	// 	if (!navigator.geolocation) {
-	// 		status.textContent = "GeoLocation is not supported by your browser";
-	// 	} else {
-	// 		status.textContent = "Locating...";
-	// 		navigator.geolocation.getCurrentPosition(success, error);
-	// 	}
-	// };
-	getWeatherData = async (city) => {
-		const URL = "http://api.weatherapi.com/v1/forecast";
-
-		const FULL_URL = `${URL}.json?key=${API_KEY}&q=${city}&days=3&aqi=no&alerts=no`;
-
-		//HINT: Use template literals to create a url with input and an API key
-		const weatherPromise = fetch(FULL_URL, options);
-		const data = await weatherPromise;
-		return await data.json();
-
-		//CODE GOES HERE
+		if (!navigator.geolocation) {
+			status.textContent = "GeoLocation is not supported by your browser";
+		} else {
+			status.textContent = "Locating...";
+			navigator.geolocation.getCurrentPosition(success, error);
+		}
 	};
+getWeatherData = async (city) => {
+	const URL = "http://api.weatherapi.com/v1/forecast";
+
+	const FULL_URL = `${URL}.json?key=${API_KEY}&q=${city}&days=3&aqi=no&alerts=no`;
+
+	//HINT: Use template literals to create a url with input and an API key
+	const weatherPromise = fetch(FULL_URL, options);
+	const data = await weatherPromise;
+	return await data.json();
+
+	//CODE GOES HERE
+};
 
 /**
  * Retrieve city input and get the weather data
@@ -109,7 +109,7 @@ searchCity = () => {
 
 	let userInfo = document.getElementById("userLocation");
 	let weatherImg = document.getElementById("weatherIcon");
-	let wind = document.getElementById("wind");
+	let wind = document.getElementById("windOutput");
 	let conditionOuput = document.getElementById("conditionOuput");
 	let localTemp = document.getElementById("temp");
 
@@ -120,8 +120,8 @@ searchCity = () => {
 			userInfo.innerHTML = `${data.location.name}, ${data.location.region} `;
 			conditionOuput.innerHTML = `${data.current.condition.text}`;
 			weatherImg.src = `${data.current.condition.icon}`;
-			localTemp.innerHTML = `${data.current.temp_f} °`;
-			wind.innerHTML = `Low Temp: ${data.forecast}`;
+			localTemp.innerHTML = `${data.current.temp_f.toFixed(0)}°`;
+			// wind.innerHTML = ` ${data.location.localtime}`;
 		})
 		.catch((error) => {
 			console.log(error);

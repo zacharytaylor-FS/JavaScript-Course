@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Taylor's Weather App ☀️</title>
 		<link rel="stylesheet" href="/bootstrap-5.2.0-dist/css/bootstrap.css" />
 
 		<link
@@ -9,63 +8,167 @@
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
 		/>
 		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Taylor's Weather App ☀️</title>
 	</head>
-	<body class="bg-body">
-		<header class="w-100 bg-indigo">
-			<h1 class="banner p-3 mb-5 text-dark text-center">
-				Taylor'd Weather
-				<i class="bi bi-sun-fill" style="font-size: 4rem; color: orange"></i>
-			</h1>
-		</header>
-		<main id="weather-app container">
-			<form action="" method="post" class="text-center">
-				<div
-					class="input-group input-group-lg position-relative top-50 start-50 translate-middle flex-nowrap w-50"
-				>
-					<label for="userInput" class="d-none"></label>
-					<input
-						type="text"
-						id="userInput"
-						class="form-control rounded-start"
-						placeholder="Search City, Zipcode "
-						aria-label="Recipient's username"
-						aria-describedby="button-addon"
-					/>
 
+	<body class="bg-body">
+		<header class="head">
+			<nav class="navbar navbar-light bg-dark fixed-top">
+				<div class="container-fluid d-flex align-items-center">
+					<a class="navbar-brand d-flex align-items-center" href="#"
+						><i
+							class="bi bi-sun-fill"
+							style="font-size: 1.5rem; color: orange"
+						></i>
+						<span class="text-light">TayWeather</span></a
+					>
+
+					<form
+						role="search"
+						method="post"
+						class="navbar-nav ms-auto w-25 mg-lg-0 bg-body rounded-pill text-secondary"
+					>
+						<div class="input-group input-group-sm">
+							<button
+								class="btn bi bi-search border-0"
+								type="button"
+								id="button-addon1"
+								onclick="searchCity()"
+							></button>
+							<input
+								type="text"
+								id="userInput"
+								role="search"
+								class="form-control border-0 bg-transparent"
+								placeholder="Search City or Zipcode "
+								aria-label="Search"
+								aria-describedby="button-addon"
+							/>
+						</div>
+
+						<div
+							class="navbar-collapse collapse border-0"
+							id="navbarsExample09"
+							style=""
+						></div>
+					</form>
 					<button
 						type="button"
-						class="btn border border-dark bg-white bg-opacity-75 input-group-button"
-						id="button-addon"
-						onclick="getLocation()"
-					>
-						<svg
-							id="buttonIcon"
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="bi bi-geo-alt"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
-							/>
-							<path
-								d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
-							/>
-						</svg>
-					</button>
-				</div>
+						class="btn bi bi-globe2 text-light border-0 bg-opacity-75 ms-2 me-auto fs-5"
+						id="button-location"
+						onclick="getGeoLocation()"
+					></button>
 
-				<button
-					id="searchButton"
-					type="button"
-					onclick="searchCity()"
-					class="btn btn-lg btn-warning mt-2"
-				>
-					Search
-				</button>
-			</form>
+					<button
+						class="navbar-toggler bi bi-list border-0 text-warning fs-4"
+						type="button"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#offcanvasNavbar"
+						aria-controls="offcanvasNavbar"
+					>
+						<!-- <span class="navbar-toggler-icon"></span> -->
+					</button>
+					<div
+						class="offcanvas offcanvas-end bg-dark"
+						tabindex="-1"
+						id="offcanvasNavbar"
+						aria-labelledby="offcanvasNavbarLabel"
+					>
+						<div class="offcanvas-header">
+							<a class="navbar-brand d-flex align-items-center" href="#"
+								><i
+									class="bi bi-sun-fill"
+									style="font-size: 1.5rem; color: orange"
+								></i>
+								<span class="text-light">TayWeather</span></a
+							>
+							<button
+								type="button"
+								class="btn-close text-reset"
+								data-bs-dismiss="offcanvas"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="offcanvas-body text-bg-light">
+							<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+								<li class="nav-item">
+									<a class="nav-link active" aria-current="page" href="#"
+										>TODAY</a
+									>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">HOURLY</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">3-Day Forecast</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">5-Day Forecast</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		
+
+		
+		<div
+			class="container-fluid pt-5 mt-5  bg-image img-fluid position-relative"
+			style="
+				background-image: url('https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+				height: 350px;
+			"
+		>
+			
+
+				<div class="card text-white w-50 mx-auto bg-dark position-relative">
+				
+
+					<div class="container p-0">
+						<div class="card-body bg-dark w-100 p-0">
+							<div class="card-title bg-secondary bg-opacity-25">
+								<h3
+									id="userLocation"
+									class="card-title text-light ms-5"
+								>
+									<span class="text-primary fs-4 bg-secondary ms-5" id="userLocation"></span>
+								</h3>
+							</div>
+							<div
+								class="card-text d-flex justify-content-between align-items-center"
+							>
+								<div class="card-text justify-content-start col-5 fs-5 flex-grow-2 ms-5">
+									<h1 id="temp" class="card-text display-2 m-0"></h1>
+									<p
+										id="conditionOuput"
+										class="card-text col w-100 m-0"
+									></p>
+									<p id="hi-lowtemp" class="card-text m-0">H: , L:</p>
+									<p id="windOutput" class="col card-text text-light w-100 m-0">
+										sfdgs
+									</p>
+								</div>
+								<img
+									src=""
+									id="weatherIcon"
+									class="col-1 card-img h-25 me-2"
+									alt=""
+									style="width: 125px"
+								/>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+
+		<main id="weather-app container">
 			<p id="status"></p>
 			<a id="mapLink" href="" target="_blank"></a>
 
@@ -204,7 +307,14 @@
 				</div>
 			</div>
 		</main>
-		<script src="/bootstrap-5.2.0-dist/js/bootstrap.js"></script>
+		<footer class="footer bg-dark mt-auto py-3">
+			<a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
+		</footer>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+			crossorigin="anonymous"
+		></script>
 		<script src="script.js"></script>
 	</body>
 </html>
