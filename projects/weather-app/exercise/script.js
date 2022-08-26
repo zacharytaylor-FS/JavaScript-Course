@@ -64,16 +64,19 @@ let /**
 		const status = document.getElementById("status");
 		const geolocation = document.getElementById("mapLink");
 
-		mapLink.href = [];
+		mapLink.data = [];
 		mapLink.textContent = "";
 		console.log("button is working");
-		function success(position) {
-			const latitude = position.coords.latitude;
-			const longitude = position.coords.longitude;
 
+		function success(position) {
+			let lat = position.coords.latitude.toFixed(2);
+			let lng = position.coords.longitude.toFixed(2);
+
+			getWeatherData(lat, lng);
 			status.textContent = "";
-			geolocation.href = `https:www.openstreetmap.org/#map=18/${latitude},${longitude}`;
-			console.log((geolocation.textContent = `${latitude},${longitude}`));
+			geolocation.data = `https:www.openstreetmap.org/#map=18/${lat},${lng}`;
+			console.log((geolocation.textContent = `${lat},${lng}`));
+			document.getElementById("userInput").value = `${lat},${lng}`;
 		}
 
 		function error() {
