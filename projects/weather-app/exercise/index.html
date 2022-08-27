@@ -14,7 +14,7 @@
 	</head>
 
 	<body class="bg-body">
-		<header class="head">
+		<header class="header">
 			<nav class="navbar navbar-light bg-dark fixed-top">
 				<div class="container-fluid d-flex align-items-center">
 					<a class="navbar-brand d-flex align-items-center" href="#"
@@ -51,17 +51,29 @@
 						<div
 							class="navbar-collapse collapse border-0"
 							id="navbarsExample09"
-							style=""
+							
 						></div>
 					</form>
-					<button
-						type="button"
-						class="btn bi bi-globe2 text-light border-0 bg-opacity-75 ms-2 me-auto fs-5"
-						id="button-location"
-						onclick="getGeoLocation()"
-					></button>
+					
+					<div class="btn-toolbar me-auto" role="toolbar" aria-label="Pick Fahrenheit or Celsius">
+					
+						<div class="btn-group" role="group" aria-label="Click,to retrieve your Location">
+						<button
+							type="button"
+							class="btn bi bi-globe2 text-light border-0 bg-opacity-75 ms-2 me-md-5 fs-5"
+							id="button-location"
+							onclick="getGeoLocation()"
+						></button>
+					</div>
 
-					<button
+					<div class="btn-group d-none d-lg-flex" role="group" aria-label="Chose Fahrenheit or Celsius">
+      			<button type="button" class="btn btn-outline-secondary" name="tempType" id="tempF">°F</button>
+      			<button type="button" class="btn btn-outline-secondary" name="tempType" id="tempC">°C</button>
+    			</div>
+					
+				</div>
+					
+				<button
 						class="navbar-toggler bi bi-list border-0 text-warning fs-4"
 						type="button"
 						data-bs-toggle="offcanvas"
@@ -126,80 +138,110 @@
 		>
 			
 
-				<div class="card text-white w-50 mx-auto bg-dark position-relative">
+				<div id="currentConditionsCard"  class="card text-white w-50 mx-auto bg-dark position-relative" style="display: none;">
 				
 
 					<div class="container p-0">
-						<div class="card-body bg-dark w-100 p-0">
+						<div class="card-body bg-dark p-0">
 							<div class="card-title bg-secondary bg-opacity-25">
 								<h3
 									id="userLocation"
 									class="card-title text-light ms-5"
 								>
-									<span class="text-primary fs-4 bg-secondary ms-5" id="userLocation"></span>
+									<span class="text-primary bg-secondary ms-5" id="userLocation"></span>
 								</h3>
 							</div>
 							<div
-								class="card-text d-flex justify-content-between align-items-center"
+								class="card-text d-flex justify-content-evenly align-items-center"
 							>
-								<div class="card-text justify-content-start col-5 fs-5 flex-grow-2 ms-5">
+								<div class="card-text justify-content-start col-5 fs-5  py-2">
 									<h1 id="temp" class="card-text display-2 m-0"></h1>
 									<p
 										id="conditionOuput"
-										class="card-text col w-100 m-0"
+										class="card-text col  m-0"
 									></p>
-									<p id="hi-lowtemp" class="card-text m-0">H: , L:</p>
-									<p id="windOutput" class="col card-text text-light w-100 m-0">
+									<div class="d-flex justify-content-start">
+										<p id="hitemp" class="card-text mb-0"></p>
+										<p id="mintemp" class="card-text ms-2"></p>
+									</div>
+									<p id="windOutput" class="col card-text text-light  m-0">
 										sfdgs
 									</p>
 								</div>
 								<img
 									src=""
 									id="weatherIcon"
-									class="col-1 card-img h-25 me-2"
+									class="col-1 card-img h-25 me-2 flex-shrink-1"
 									alt=""
 									style="width: 125px"
 								/>
 							</div>
 						</div>
 					</div>
-				
+					<button class="btn"></button>
 				</div>
 			</div>
 		</div>
 
-		<main id="weather-app container">
+		<main id="weather-app container w-50">
 			<p id="status"></p>
 			<a id="mapLink" href="" target="_blank"></a>
 
-			<div class="card text-dark rounded-4 w-25 shadow-lg mx-auto m-5 p-0">
-				<img
-					class="card-cover img-fluid opacity-75"
-					src="https://images.unsplash.com/photo-1500740516770-92bd004b996e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
-					height=""
-					width=""
-				/>
+			<div id="todayConditionsCard" class="card bg-light text-white w-50 shadow-lg mx-auto">
+				
 
-				<div class="container">
-					<div class="card-body card-img-overlay w-100 p-0">
-						<h3
-							id="userLocation"
-							class="card-title bg-dark bg-opacity-75 text-light p-2 text-center"
-						>
-							<span class="text-primary fs-4" id="userLocation"></span>
-						</h3>
-						<div
+				<div class="container p-0">
+					<div class="card-header bg-secondary bg-opacity-25 p-0">
+							<h3
+								id="userLocation"
+								class="card-title ms-5 text-white"
+							>
+								<span class="fs-4 ms-5" id="userLocation">Today's Forecast for</span>
+							</h3>
+						</div>
+					<div class="card-body bg-transparent d-flex row row-cols-1 row-cols-md-4 g-4 mx-auto">
+
+						<div class="card text-dark col">
+							<h4 class="card-title">Morning</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">
+							<p class="card-text">Percip</p>
+						</div>
+						
+						<div class="card text-dark col">
+							<h4 class="card-title">Noon</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">
+							<p class="card-text">Percip</p>
+						</div>
+
+
+						<div class="card text-dark col">
+							<h4 class="card-title">Evening</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">
+							<p class="card-text">Percip</p>
+						</div>
+
+						<div class="card text-dark col">
+							<h4 class="card-title">Night</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">
+							<p class="card-text">Percip</p>
+						</div>
+
+						<!-- <div
 							class="card-text d-flex justify-content-center align-items-center mx-auto"
 						>
 							<div class="card-text col-5 fs-5 flex-grow-2">
-								<h1 id="temp" class="card-text display-2"></h1>
+								
 								<p
 									id="conditionOuput"
-									class="card-text col text-dark w-100"
-								></p>
-								<p id="hi-lowtemp" class="card-text">H: , L:</p>
-								<p id="windOutput" class="col card-text text-dark w-100">
-									sfdgs
+									class="card-text col w-100"
+								>Morning</p>
+								<p id="hi-lowtemp" class="card-text">Noon</p>
+								<p id="windOutput" class="col card-text  w-100">
+									Evening
 								</p>
 							</div>
 							<img
@@ -209,16 +251,16 @@
 								alt=""
 								style="width: 125px"
 							/>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
 
 			<div
-				class="mt-5 mb-5 py-4 text-white text-center bg-warning w-75 position-relative top-50 start-50 translate-middle-x"
+				class="card mt-5 mb-5 py-4 text-white bg-warning w-50 position-relative top-50 start-50 translate-middle-x"
 			>
-				<h2 class="text-dark m-1 p-2 w-100">
-					3-Day Forecast for:
+				<h2 class="text-dark p-2 w-100">
+					Weather Today in:
 					<span class="text-primary fs-3" id="userLocation"></span>
 				</h2>
 				<div
@@ -303,6 +345,119 @@
 								</ul>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="todayConditionsCard" class="card bg-dark text-white w-50 shadow-lg mx-auto">
+				
+
+				<div class="container p-0">
+					<div class="card-header bg-secondary bg-opacity-25 p-0">
+							<h3
+								id="userLocation"
+								class="card-title ms-5 text-white"
+							>
+								<span class="fs-4 ms-5" id="userLocation">Hourly Forecast</span>
+							</h3>
+						</div>
+					<div class="card-body bg-transparent d-flex row row-cols-1 row-cols-md-4 g-4 mx-auto">
+
+						<div class="card text-dark col">
+							<h4 class="card-title">Now</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+						
+						<div class="card text-dark col">
+							<h4 class="card-title">TIME</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+
+
+						<div class="card text-dark col">
+							<h4 class="card-title">TIME</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+
+						<div class="card text-dark col">
+							<h4 class="card-title">TIME</h4>
+							<p class="card-text">Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+
+						
+					</div>
+				</div>
+			</div>
+
+			<div id="FiveDayConditionsCard" class="card bg-dark text-white w-50 shadow-lg mx-auto">
+				
+
+				<div class="container p-0">
+					<div class="card-header bg-secondary bg-opacity-25 p-0">
+							<h3
+								id="userLocation"
+								class="card-title ms-5 text-white"
+							>
+								<span class="fs-4 ms-5" id="userLocation">Daily Forecast</span>
+							</h3>
+						</div>
+					<div class="card-body bg-transparent d-flex row row-cols-1 row-cols-md-4 g-4 mx-auto">
+
+						<div class="card text-dark col">
+							<h4 class="card-title">DATE</h4>
+							<p class="card-text">Hi Degrees</p>
+							<p class="card-text">Low Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+						<div class="card text-dark col">
+							<h4 class="card-title">DATE</h4>
+							<p class="card-text">Hi Degrees</p>
+							<p class="card-text">Low Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+						<div class="card text-dark col">
+							<h4 class="card-title">DATE</h4>
+							<p class="card-text">Hi Degrees</p>
+							<p class="card-text">Low Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+						<div class="card text-dark col">
+							<h4 class="card-title">DATE</h4>
+							<p class="card-text">Hi Degrees</p>
+							<p class="card-text">Low Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+						<div class="card text-dark col">
+							<h4 class="card-title">DATE</h4>
+							<p class="card-text">Hi Degrees</p>
+							<p class="card-text">Low Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+						<div class="card text-dark col">
+							<h4 class="card-title">DATE</h4>
+							<p class="card-text">Hi Degrees</p>
+							<p class="card-text">Low Degrees</p>
+							<img src="" alt="">Img
+							<p class="card-text">Percip</p>
+						</div>
+						
+						
+						
+
+						
 					</div>
 				</div>
 			</div>

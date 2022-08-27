@@ -90,17 +90,16 @@ let /**
 			navigator.geolocation.getCurrentPosition(success, error);
 		}
 	};
+
 getWeatherData = async (city) => {
 	const URL = "http://api.weatherapi.com/v1/forecast";
 
-	const FULL_URL = `${URL}.json?key=${API_KEY}&q=${city}&days=3&aqi=no&alerts=no`;
+	const FULL_URL = `${URL}.json?key=${API_KEY}&q=${city}&days=10&aqi=no&alerts=yes`;
 
 	//HINT: Use template literals to create a url with input and an API key
 	const weatherPromise = fetch(FULL_URL, options);
 	const data = await weatherPromise;
 	return await data.json();
-
-	//CODE GOES HERE
 };
 
 /**
@@ -110,20 +109,12 @@ getWeatherData = async (city) => {
 searchCity = () => {
 	const city = document.getElementById("userInput").value;
 
-	let userInfo = document.getElementById("userLocation");
-	let weatherImg = document.getElementById("weatherIcon");
-	let wind = document.getElementById("windOutput");
-	let conditionOuput = document.getElementById("conditionOuput");
-	let localTemp = document.getElementById("temp");
-
 	getWeatherData(city)
 		.then((data) => {
-			// showWeatherData(data);
+			showWeatherData(data);
 			console.log(data);
-			userInfo.innerHTML = `${data.location.name}, ${data.location.region} `;
-			conditionOuput.innerHTML = `${data.current.condition.text}`;
-			weatherImg.src = `${data.current.condition.icon}`;
-			localTemp.innerHTML = `${data.current.temp_f.toFixed(0)}°`;
+			showWeatherData(data);
+			document.getElementById("currentConditionsCard").style.display = "block";
 			// wind.innerHTML = ` ${data.location.localtime}`;
 		})
 		.catch((error) => {
@@ -138,6 +129,32 @@ searchCity = () => {
  * Show the weather data in HTML
  * HINT: make sure to console log the weatherData to see how the data looks like
  */
-showWeatherData = (weatherData) => {
+showWeatherData = (data) => {
 	//CODE GOES HERE
+
+	todayLocalTemp = document.getElementById(
+		"temp"
+	).innerHTML = `${data.current.temp_f.toFixed(0)}°F`;
+
+	todayLowTemp = document.getElementById(
+		"mintemp"
+	).innerHTML = ` L ${data.forecast.forecastday[0].day.mintemp_f.toFixed(0)}°`;
+
+	todayHighTemp = document.getElementById(
+		"hitemp"
+	).innerHTML = `H ${data.forecast.forecastday[0].day.maxtemp_f.toFixed(0)}° `;
+
+	userInfo = document.getElementById(
+		"userLocation"
+	).innerHTML = `${data.location.name}, ${data.location.region}`;
+
+	weatherImg = document.getElementById(
+		"weatherIcon"
+	).src = `${data.current.condition.icon}`;
+
+	wind = document.getElementById("windOutput");
+
+	conditionOuput = document.getElementById(
+		"conditionOuput"
+	).innerHTML = `${data.current.condition.text}`;
 };
