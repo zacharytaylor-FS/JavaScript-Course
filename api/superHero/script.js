@@ -1,9 +1,9 @@
 const SUPERHERO_TOKEN = "814072426696849";
 const BASE_URL = `https://superheroapi.com/api.php/${SUPERHERO_TOKEN}`;
-const newHero = document.getElementById("newHeroButton");
+const newHero = document.getElementById("rdnHeroButton");
 const heroImageDiv = document.getElementById("heroName");
 const searchButton = document.getElementById("searchButton");
-const searchInput = document.getElementById("searchInput");
+const searchInput = document.getElementById("userInput");
 
 const getSuperHero = (id) => {
 	//* name 👉🏾 base_url/search/batman
@@ -15,9 +15,9 @@ const getSuperHero = (id) => {
 	fetch(`${BASE_URL}/${id}`)
 		.then((response) => response.json())
 		.then((json) => {
-			console.log(json.biography);
+			console.log(json);
 			const superHero = json;
-			showHeroInfo(superHero);
+			heroData(superHero);
 		});
 };
 
@@ -30,11 +30,8 @@ const statToEmoji = {
 	combat: "🤺 ",
 };
 
-const showHeroInfo = (character) => {
+const heroData = (character) => {
 	const name = `${character.name}`;
-
-	const img = `<img src=${character.image.url} height=300 width=300>`;
-
 	const stats = Object.keys(character.powerstats)
 		.map((stat) => {
 			return `<p class="card-text">${statToEmoji[stat]}${stat.toUpperCase()}: ${
@@ -50,12 +47,12 @@ const showHeroInfo = (character) => {
 
 const getSearchSuperHero = (name) => {
 	document.getElementById("heroCard").style.display = "block";
-	console.log(searchInput.value);
+
 	fetch(`${BASE_URL}/search/${name}`)
 		.then((response) => response.json())
 		.then((json) => {
 			const hero = json.results[0];
-			showHeroInfo(hero);
+			heroData(hero);
 		});
 };
 

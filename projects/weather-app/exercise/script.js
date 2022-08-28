@@ -13,17 +13,17 @@
 //* max-temp
 
 const app = document.getElementById("weather-app");
-const temp = document.getElementById("");
-const mintemp = document.getElementById("");
-const maxtemp = document.getElementById("");
-const dateOutput = document.getElementById("");
-const timeOutput = document.getElementById("");
-// const conditionOutput = document.getElementById("");
-const cityOutput = document.getElementById("");
-const cloudOutput = document.getElementById("");
-const windOutput = document.getElementById("");
-const humidityOutput = document.getElementById("");
-let theLocation = document.getElementById("");
+// const temp = document.getElementById("");
+// const mintemp = document.getElementById("");
+// const maxtemp = document.getElementById("");
+// const dateOutput = document.getElementById("");
+// const timeOutput = document.getElementById("");
+// // const conditionOutput = document.getElementById("");
+// const cityOutput = document.getElementById("");
+// const cloudOutput = document.getElementById("");
+// const windOutput = document.getElementById("");
+// const humidityOutput = document.getElementById("");
+// let theLocation = document.getElementById("");
 
 const options = {
 	method: "GET",
@@ -72,7 +72,6 @@ let /**
 			let lat = position.coords.latitude.toFixed(2);
 			let lng = position.coords.longitude.toFixed(2);
 
-			getWeatherData(lat, lng);
 			status.textContent = "";
 			geolocation.data = `https:www.openstreetmap.org/#map=18/${lat},${lng}`;
 			console.log((geolocation.textContent = `${lat},${lng}`));
